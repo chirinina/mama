@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Para ti Mamita ❤️</title>
+    <meta name="google-adsense-account" content="ca-pub-4704501585981299" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvvZQw2gCPF4AkHXT4ot-YkL2rfEGt82hCQU2UFLKsZR4e84q3BgoEUPZhnK9n72gbC2I&usqp=CAU"
+    />
+  </head>
+  <body>
+    <style>
+      /* Añade esto al final de tu sección CSS */
+
+      /* Pequeñas pantallas (menos de 400px) */
+      @media (max-width: 400px) {
+        .envelope {
+          --envelope-width: 280px;
+          --envelope-height: 160px;
+          --letter-font-size: 0.9rem;
+        }
+
+        .letter p {
+          width: 28ch;
+        }
+
+        .form-container {
+          width: 95%;
+          padding: 1.2rem;
+        }
+
+        .form-container h2 {
+          font-size: 0rem;
+        }
+
+        .highlight {
+          font-size: 1.4rem;
+        }
+      }
+
+      /* Pantallas medianas (401px-719px) */
+      @media (min-width: 401px) and (max-width: 719px) {
+        .envelope {
+          --envelope-width: 450px;
+          --envelope-height: 260px;
+          --letter-font-size: 1.2rem;
+        }
+
+        .form-container {
+          width: 380px;
+        }
+      }
+
+      /* Pantallas grandes (más de 1200px) */
+      @media (min-width: 1200px) {
+        .envelope {
+          --envelope-width: 650px;
+          --envelope-height: 380px;
+          --letter-font-size: 1.8rem;
+        }
+      }
+
+      /* Ajustes para orientación horizontal en móviles */
+      @media (max-height: 500px) and (orientation: landscape) {
+        body {
+          margin-top: 20px;
+          padding: 0.5rem;
+        }
+
+        .envelope {
+          --envelope-width: 350px;
+          --envelope-height: 200px;
+          --letter-font-size: 0.9rem;
+        }
+
+        .form-container {
+          max-height: 90vh;
+          overflow-y: auto;
+        }
+      }
+
+      /* Optimización para Safari iOS */
+      @supports (-webkit-touch-callout: none) {
+        .envelope {
+          perspective: 1200px;
+        }
+
+        .envelope-inner {
+          transform-style: preserve-3d;
+        }
+      }
+
+      /* Mejoras de rendimiento para dispositivos móviles */
+      @media (hover: none) {
+        .envelope {
+          --duration: 800ms;
+        }
+
+        .form-container button:hover {
+          transform: none;
+          box-shadow: 0 10px 20px rgba(214, 51, 108, 0.3);
+        }
+      }
+    </style>
+    <style>
+      @import url(https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap);
+
+      *,
+      ::before,
+      ::after {
+        box-sizing: border-box;
+      }
+      body {
+        /* font-family: "Quicksand", sans-serif; */
+        background: linear-gradient(to bottom right, #e9c2c2, #ebe6e6, #a1ebea);
+        color: #10006b;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        padding: 1rem;
+        margin-top: 10px;
+        overflow: hidden;
+        -webkit-tap-highlight-color: transparent;
+      }
+      .envelope {
+        --duration: 1000ms;
+
+        --shadow-width: calc(var(--envelope-width) * 0.85);
+        --shadow-blur: 15px;
+
+        --envelope-width: 300px;
+        --envelope-height: 175px;
+        --envelope-clr-bg: #ca08f3;
+        --envelope-clr-bg-side: #8a0078;
+        --envelope-clr-bg-bottom: #d400ff;
+        --envelope-clr-bg-top: #ca08f3;
+        --envelope-clr-txt: #fff;
+
+        --envelope-transform-hover: rotateY(180deg);
+        --evelope-rotate-delay: calc(var(--duration) / 1);
+        --evelope-rotate-delay-hover: 0ms;
+
+        --letter-clr-bg: #fff;
+        --letter-clr-text: #046f58;
+        --letter-font-size: 1rem;
+        --letter-delay: 0ms;
+        --letter-delay-hover: calc(var(--duration) * 1.25);
+
+        --letter-height: calc(var(--envelope-height) - 2rem);
+        --letter-height-hover: calc(var(--envelope-height) * 1.75);
+
+        --fold-rotate: rotateX(0deg);
+        --fold-zindex-hover: 0;
+        --fold-rotate-hover: rotateX(180deg);
+        --fold-delay: calc(var(--duration) / 2);
+        --fold-delay-hover: calc(var(--duration) * 0.75);
+
+        --front-font-size: 0.9rem;
+        --snowman-width: 40px;
+        --bells-width: 20px;
+
+        position: relative;
+        height: var(--envelope-height);
+        width: var(--envelope-width);
+        perspective: 1000px;
+        cursor: pointer;
+      }
+
+      @media (min-width: 720px) {
+        .envelope {
+          --envelope-width: 600px;
+          --envelope-height: 350px;
+          --letter-font-size: 1.6rem;
+          --snowman-width: 130px;
+          --bells-width: 60px;
+          --front-font-size: 1.25rem;
+        }
+      }
+
+      .envelope::after {
+        content: "";
+        position: absolute;
+        top: 110%;
+        left: 50%;
+        width: var(--shadow-width);
+        height: 40px;
+        transform: translateX(-50%);
+        border-radius: 50%;
+        background: rgba(1, 107, 100, 0.4);
+        filter: blur(var(--shadow-blur));
+        opacity: 0;
+        animation: enterFromSides var(--duration) ease-in-out forwards;
+        animation-delay: var(--evelope-rotate-delay);
+      }
+
+      @keyframes enterFromSides {
+        0% {
+          transform: translateX(-200%) translateY(0);
+          opacity: 0;
+        }
+        100% {
+          transform: translateX(-50%) translateY(0);
+          opacity: 1;
+        }
+      }
+
+      .envelope:hover {
+        --envelope-transform: var(--envelope-transform-hover, 0deg);
+        --evelope-rotate-delay: var(--evelope-rotate-delay-hover);
+        --shadow-transform: rotateY(180deg);
+        --fold-rotate: var(--fold-rotate-hover);
+        --fold-delay: var(--fold-delay-hover);
+        --fold-zindex: var(--fold-zindex-hover);
+        --letter-height: var(--letter-height-hover);
+        --letter-delay: var(--letter-delay-hover);
+      }
+
+      .envelope-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transition: var(--duration) ease-in-out;
+        transition-delay: var(--evelope-rotate-delay);
+        transform-style: preserve-3d;
+        transform: var(--envelope-transform);
+        display: grid;
+      }
+
+      .envelope-front,
+      .envelope-back {
+        position: relative;
+        grid-area: 1/1;
+        width: 100%;
+        height: 100%;
+        background-color: var(--envelope-clr-bg);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        perspective: 1000px;
+        isolation: isolate;
+      }
+
+      .envelope-front {
+        color: var(--envelope-clr-txt);
+        display: grid;
+        place-content: center;
+        border-radius: 20px 15px;
+      }
+      .envelope-front .postage-stamp {
+        position: absolute;
+        top: 1em;
+        right: 0.5em;
+        width: 15%;
+      }
+      .envelope-front .address {
+        text-align: left;
+        font-size: var(--front-font-size);
+      }
+      .envelope-front .address > p > span:first-child {
+        font-family: system-ui;
+        font-weight: 200;
+      }
+      .envelope-front .address > p > span:last-of-type {
+        font-weight: 800;
+      }
+
+      .envelope-back {
+        transform: rotateY(180deg);
+      }
+
+      .envelope-back::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 3;
+        background-image: conic-gradient(
+          transparent 60deg,
+          var(--envelope-clr-bg-side) 60deg 120deg,
+          var(--envelope-clr-bg-bottom) 120deg 240deg,
+          var(--envelope-clr-bg-side) 240deg 300deg,
+          transparent 300deg
+        );
+      }
+
+      .envelope-back .top-fold {
+        position: absolute;
+        inset: 0;
+        z-index: var(--fold-zindex, 10);
+        background-color: var(--envelope-clr-bg-top);
+        clip-path: polygon(0% 0%, 50% 55%, 100% 0%);
+        transform: var(--fold-rotate);
+        transform-origin: top;
+        transition: var(--duration) ease-in-out;
+        transition-delay: var(--fold-delay);
+      }
+
+      .letter {
+        position: absolute;
+        bottom: 40px;
+        left: 50%;
+        width: 90%;
+        height: var(--letter-height);
+        font-size: var(--letter-font-size);
+        transform: translateX(-50%);
+        background: var(--letter-clr-bg);
+        z-index: 2;
+        border-radius: 35px 1px;
+        padding: 0em 3em;
+        display: flex;
+        flex-direction: column;
+        gap: -90%rem;
+        align-items: center;
+        text-align: center;
+        transition: var(--duration) ease-in-out;
+        transition-delay: var(--letter-delay);
+        overflow: hidden;
+      }
+
+      .letter p {
+        margin: 0;
+        font-weight: bold;
+        width: 25ch;
+        color: var(--letter-clr-text);
+      }
+
+      .custom-image {
+        width: 60px;
+        height: 20px;
+        object-fit: contain;
+      }
+      .custom-image2 {
+        width: 150px;
+        height: 150px;
+        object-fit: contain;
+      }
+
+      .highlight {
+        display: block;
+        margin-top: 10px;
+        font-size: 1.8rem;
+        font-weight: bold;
+      }
+
+      .gender-option {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: #000c84;
+      }
+
+      .gender-option input[type="radio"] {
+        accent-color: #ca08f3;
+        width: 12px;
+        height: 12px;
+      }
+
+      .name-form {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url("https://imagenes.elpais.com/resizer/v2/6KY2FVTRBZFTNMH4ISISNF544Y.png?auth=547eafefb85f498e11d4014e0cf81c73b69339dfb50a75c2a5ba359b63b36e17&width=1960&height=1103&smart=true")
+          center/cover no-repeat; /* Imagen de fondo premium */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        overflow: hidden;
+      }
+
+      .form-container {
+        background: rgba(223, 205, 205, 0.92);
+        backdrop-filter: blur(12px);
+        padding: 2.5rem;
+        border-radius: 24px;
+        text-align: center;
+        width: 360px;
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        position: relative;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        animation: elegantAppear 1s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+        transform: scale(0.95);
+        opacity: 0;
+      }
+
+     .form-container::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(
+        circle
+          rgba(22, 239, 255, 0.4) 0%,
+          rgba(225, 105, 105, 0) 70%
+        );
+        animation: rotateGradient 15s linear infinite;
+        z-index: -1;
+      }
+
+      .form-container::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #ff9a9e, #fad0c4, #fad0c4, #ff9a9e);
+        animation: gradientFlow 3s ease infinite alternate;
+      }
+
+      .form-container h2 {
+        color: #792334;
+        margin: 0 0 1.8rem 0;
+        font-size: 1.3rem;
+        font-weight: 700;
+        font-family: "Playfair Display", serif;
+        letter-spacing: -0.5px;
+        position: relative;
+        display: inline-block;
+        animation: textGlow 2s ease-in-out infinite alternate;
+      }
+
+      .form-container h2::after {
+        content: "Mamá";
+        position: absolute;
+        bottom: -25px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 0.9rem;
+        color: #dd2553;
+        font-weight: 400;
+        font-style: italic;
+      }
+        .form-container input {
+          width: 100%;
+          padding: 0.6rem 1.2rem; /* más compacto */
+          margin: 0.6rem 0;
+          border: none;
+          border-radius: 25px;
+         
+      
+          color: #444;
+          transition:
+            background 0.4s ease,
+            box-shadow 0.5s ease,
+            transform 0.3s ease;
+          animation: fadeInScale 1s ease forwards;
+          position: relative;
+          overflow: hidden;
+          will-change: transform, box-shadow, background;
+          cursor: text;
+        }
+
+        /* Animación combinada: fadeIn con scale y pequeño movimiento */
+        @keyframes fadeInScale {
+          0% {
+            opacity: 0;
+            transform: translateY(15px) scale(0.95);
+          }
+          50% {
+            opacity: 0.7;
+            transform: translateY(-7px) scale(1.05);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+          }
+        }
+
+        /* Efecto "shine" animado al pasar el mouse */
+        .form-container input::before {
+          content: "";
+          position: absolute;
+          top: -50%;
+          left: -50%;
+          width: 200%;
+          height: 200%;
+          background: linear-gradient(120deg, transparent 30%, rgba(255, 255, 255, 0.25) 50%, transparent 70%);
+          transform: rotate(25deg) translateX(-100%);
+          transition: transform 0.7s ease;
+          pointer-events: none;
+          border-radius: 25px 2px 200px 200px;
+          z-index: 1;
+        }
+
+        .form-container input:hover::before {
+          transform: rotate(25deg) translateX(100%);
+        }
+
+        /* Foco con efecto glow sin bordes */
+        .form-container input:focus {
+          outline: none;
+          background: #fff;
+          box-shadow:
+            0 0 10px 3px rgba(214, 51, 108, 0.45),
+            inset 0 0 8px rgba(214, 51, 108, 0.2),
+            0 4px 15px rgba(214, 51, 108, 0.3);
+          transform: translateY(-4px) scale(1.05);
+          z-index: 2;
+        }
+
+        /* Suavizado para texto y cursor */
+        .form-container input::-webkit-input-placeholder {
+          color: #bbb;
+          transition: color 0.3s ease;
+        }
+
+        .form-container input:focus::-webkit-input-placeholder {
+          color: transparent;
+        }
+
+
+      .form-container button {
+        background: linear-gradient(135deg, #ff6b8b, #efeaeb);
+        color: #10006b;
+        border: none;
+        padding: 1.0rem;
+        border-radius: 55px;
+        /* font-size: 1.1rem; */
+        width: 48%;
+        margin-top: 1.5rem;
+        cursor: pointer;
+        transition: all 0.5s;
+        font-weight: 600;
+        letter-spacing: 0.12px;
+        box-shadow: 0 10px 20px rgba(214, 51, 108, 0.3);
+        position: relative;
+        overflow: hidden;
+        animation: fadeInUp 0.8s 0.6s both;
+        z-index: 1;
+      }
+
+      .form-container button::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #05e5e5, #e2b7e9);
+        opacity: 0;
+        transition: all 0.5s;
+        z-index: -1;
+      }
+
+      .form-container button:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(214, 51, 108, 0.4);
+      }
+
+      .form-container button:hover::before {
+        opacity: 1;
+      }
+
+      .form-container button::after {
+        content: "❤";
+        position: absolute;
+        right: 20px;
+        transition: all 0.5s;
+      }
+
+      .form-container button:hover::after {
+        transform: scale(1.5);
+      }
+
+      /* Animaciones premium */
+      @keyframes elegantAppear {
+        0% {
+          transform: scale(0.95);
+          opacity: 0;
+        }
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadeInUp {
+        0% {
+          transform: translateY(20px);
+          opacity: 0;
+        }
+        100% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes rotateGradient {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes gradientFlow {
+        0% {
+          background-position: 0% 50%;
+        }
+        100% {
+          background-position: 100% 50%;
+        }
+      }
+
+      @keyframes textGlow {
+        0% {
+          text-shadow: 0 0 5px rgba(214, 51, 108, 0.3);
+        }
+        100% {
+          text-shadow: 0 0 15px rgba(214, 51, 108, 0.5);
+        }
+      }
+
+      .share-btn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #ca08f3;
+        color: white;
+        border: none;
+        padding: 0.8rem 1.5rem;
+        border-radius: 35px;
+        font-size: 1rem;
+        cursor: pointer;
+        z-index: 100;
+        display: none;
+      }
+
+      .share-btn:hover {
+        background: #0004fe;
+      }
+    </style>
+    <style>
+      /* Añade estos estilos al inicio de tu sección CSS */
+      @media (max-width: 480px) {
+        .form-container {
+          width: 90%;
+          padding: 1.5rem;
+          border-radius: 16px;
+        }
+
+        .form-container h2 {
+          font-size: 1.5rem;
+          margin-bottom: 1.2rem;
+        }
+
+        .form-container input {
+          padding: 0.8rem 1rem;
+          font-size: 0.9rem;
+        }
+
+        .form-container button {
+          padding: 0.9rem;
+          font-size: 1rem;
+        }
+
+        .gender-option {
+          margin-bottom: 0.5rem;
+        }
+
+        .name-form {
+          background-size: cover;
+          background-position: center;
+          padding: 1rem;
+        }
+      }
+
+      /* Ajustes adicionales para tablets */
+      @media (min-width: 481px) and (max-width: 719px) {
+        .form-container {
+          width: 70%;
+        }
+      }
+    </style>
+
+    <div class="envelope" id="envelope">
+      <div class="envelope-inner">
+        <div class="envelope-front">
+          <div class="postage-stamp">
+            <svg
+              fill="currentColor"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              viewBox="0 0 300 300"
+              xml:space="preserve"
+            >
+              <path
+                d="M253.98,257.652c0-8.568,8.568-17.748,17.136-18.361c-1.224-4.895-1.224-10.402-0.611-15.299 c-3.061,0.611-7.345,0-10.404-1.225c-6.12-3.061-9.792-9.18-9.792-15.912c0-9.18,7.956-20.807,17.136-21.42 c0-2.447,0.612-4.896,0.612-7.344s0.612-4.896,0.612-7.344c-7.956,3.061-17.137-4.283-18.973-12.24 c-1.836-9.792,4.284-17.748,12.853-21.42c-0.612-1.836-0.612-4.284-0.612-6.12c0-3.672,0-7.344,0.612-11.016 c-3.061,0-6.12-1.224-9.181-3.06c-4.283-3.06-6.731-7.344-7.344-12.24c0-0.612,0-1.836,0-2.448c0-9.792,8.568-15.3,17.136-16.524 c-0.611-3.672,0-7.956,0-11.628c0-3.06,0-6.12,0.612-9.18c-7.956,2.448-18.36-4.284-20.808-12.24 c-2.448-7.956,1.836-17.748,9.792-20.808c-1.225-3.06-1.225-6.732-1.225-10.404c0-3.06-0.611-6.732-0.611-9.792 c-9.792,12.24-39.168,4.284-40.393-9.18C205.632,3.672,200.124,1.836,195.84,0c0.611,9.18-7.956,17.748-17.137,17.748 c-9.18,0-16.523-6.732-18.359-15.3c-2.448,0-4.896,0-6.732-0.612c-2.448,0-4.896-0.612-7.956-1.224c0,4.284-2.448,9.18-5.508,12.24 c-3.672,3.672-9.18,6.12-14.076,6.12c-1.224,0-2.448,0-3.672-0.612c-5.508-1.224-12.24-4.896-14.076-11.016 c0-0.612,0-0.612,0-1.224c-4.896,0.612-11.016-0.612-15.912-2.448c-0.612,8.568-9.18,15.3-18.36,14.076 c-4.284-0.612-9.792-3.06-11.016-7.344c0-0.612,0-0.612,0-1.224c0,0,0,0.612-0.612,0.612c-3.672,3.06-8.568,2.448-12.852,1.836 c-1.224,0-2.448,0-3.672,0c1.224,0.612,1.836,1.836,2.448,2.448c3.672,4.896,5.508,11.016,3.06,17.136 c-3.06,8.568-14.076,12.24-22.032,9.18c0,1.224-0.612,1.836-0.612,3.06c-0.612,3.672-0.612,6.732-0.612,10.404 c9.792-1.224,22.644,1.224,23.868,12.852c0.612,5.508-3.06,11.016-8.568,12.852c-2.448,1.224-5.508,1.224-7.956,1.224 c-0.612,0-1.224,0-2.448-0.612c0,1.836,0,4.284,0,6.12c0,3.672,0.612,7.344-0.612,11.016l0,0c0.612,0,0.612-0.612,1.224-0.612 c11.628-3.672,23.256,7.344,19.584,18.972c-1.224,4.896-5.508,8.568-9.792,10.404c-3.672,1.224-6.732,1.836-10.404,1.836 c-0.612,1.836-0.612,3.06-1.224,4.896c-0.612,2.448-0.612,5.508-0.612,7.956c8.568-4.284,22.032-1.836,22.644,9.18 c0.612,9.179-10.404,24.48-21.42,23.869c0,1.223,0,3.059,0,4.283c0,2.447-0.612,4.896-0.612,7.957 c2.448-1.225,6.12-1.836,9.18-1.836c6.12,0.611,11.016,4.895,12.24,11.016c3.672,13.463-9.18,22.643-20.808,20.807 c-0.612,4.285-1.224,9.793-1.836,13.465c5.508-4.283,17.748-3.061,21.42,4.283c8.568,15.912-8.568,25.705-22.032,28.152 c0,4.896,0,10.404-1.224,15.301c7.344-4.285,18.36-4.285,25.704,0c7.956,4.896,11.628,13.463,11.628,22.031 c3.672-0.611,7.344-1.223,11.016-1.223c0-8.568,9.18-20.197,16.524-20.809c4.896-0.613,9.792,2.447,11.628,7.344 c1.836,4.283,1.224,9.791,3.06,14.076c0.612,0,1.224-0.611,1.836-0.611c3.06,0,4.896-0.613,7.344-1.838 c-0.612-1.836,0-3.672,0.612-6.119c1.224-4.896,5.508-9.18,10.404-10.404c11.016-3.061,19.584,4.896,22.645,14.688 c3.672-0.611,7.344-0.611,11.628-0.611c1.836,0,3.672,0,5.508,0.611c-2.448-8.566,4.284-18.971,13.464-19.584 c0.612,0,1.224,0,1.836,0c5.508,0,10.404,3.061,13.464,6.732c1.836,2.449,3.672,5.508,4.284,8.568c1.224,0,2.448,0,4.284,0 s3.672,0,5.508,0c1.224-7.955,9.792-14.076,17.748-14.688c7.956-0.613,15.912,3.672,19.584,11.016 c5.508-3.672,13.464-6.119,20.808-6.119c0-2.449,0-4.896,0-7.957C261.936,273.564,253.98,264.996,253.98,257.652z M243.576,266.221 c0,4.283-6.12,4.283-6.12,0l0,0c-3.672-77.725-4.896-155.449-9.792-233.173c-0.611,0.612-1.224,0.612-2.447,0.612 c-52.633,0-105.264,1.836-157.896,1.836c0,0,0,0-0.612,0c6.732,15.3,3.06,41.616,3.06,57.528c0,17.748,0,35.496,0,53.856 c0,39.78,0,79.56-1.224,119.341c0,1.836-1.224,3.059-2.448,3.672c50.796-12.854,115.668-14.076,167.688-6.732 c1.836,0.611,3.061,1.836,3.061,3.672s-1.225,4.283-3.672,4.896c-15.912,0.611-31.824,0.611-47.736,0.611 c-12.852,0-25.704,0-39.168,0.611c-26.316,1.225-53.856,4.285-79.56,0.613c-1.836,0-1.836-3.061,0-3.672 c-2.448,1.223-6.732,0-6.12-3.672c1.224-76.5-1.836-154.225,3.06-230.725c0-2.448,0-4.896,0.612-7.344c0-3.06,4.284-3.06,4.284,0 c0,0.612,0,1.224,0,1.224c19.584-2.448,39.168-3.672,59.364-4.896c33.048-1.224,66.097-1.224,98.532-0.612 c1.224,0,2.448,0.612,3.06,1.224c1.837-2.448,6.732-1.836,7.345,2.448c2.447,25.704,4.896,51.408,6.12,77.112 C244.8,158.508,246.024,212.977,243.576,266.221z M152.388,192.168c-3.06,1.836-6.732-0.611-7.344-3.061l0,0c0,0,0,0-0.612-0.611 c-30.6-7.957-63.036-45.9-55.692-77.112c3.06-12.852,15.3-26.316,29.988-22.032c12.852,3.672,22.032,19.584,28.152,32.436 c6.12-15.3,16.524-34.272,30.6-40.392c11.628-4.896,22.644,0,27.54,11.628C219.708,127.908,178.704,174.42,152.388,192.168z"
+              ></path>
+            </svg>
+          </div>
+
+          <div class="address">
+            <p><span>Para:</span> <span id="mom-name">Mamá❤️</span></p>
+            <p><span>De:</span> <span id="child-type">Tu hijo</span></p>
+          </div>
+        </div>
+
+        <div class="envelope-back">
+          <div class="top-fold"></div>
+          <div class="letter">
+            <img
+              src="https://img.freepik.com/vector-premium/pulgar-dedos-imprimir-marca-huella-dactilar-amor-corazon_53500-1839.jpg"
+              alt="love1"
+              class="custom-image"
+            />
+            <p>
+              Feliz día de la Madre querida <span id="letter-mom-name"> mamá</span>,
+              gracias por darme la vida.<span class="highlight"
+                >¡Te amo mucho❤️!</span
+              >
+            </p>
+            <img
+              src="https://img.freepik.com/fotos-premium/imagen-flores-amarillas-palabras-sol-citadas-ella_1191871-60686.jpg"
+              alt="love2"
+              class="custom-image2"
+            />
+          </div>
+          <!-- Ícono animado con mensaje al hacer clic (tooltip hacia la derecha) -->
+<div class="floating-container">
+  <span class="icon" id="showTooltip" aria-label="Mostrar felicitación" role="button" tabindex="0">🎁</span>
+  <div class="tooltip" id="tooltipMessage" role="tooltip" aria-hidden="true">
+    Querida mamá, en este día tan especial quiero recordarte lo valiosa que eres para mí. 
+    Gracias por tus abrazos que sanan, tus palabras que inspiran y tu amor que nunca falla. 
+    Eres el alma de nuestro hogar, la guía de mi camino y el corazón que late en mi recuerdo todos los días. 
+    ¡Feliz Día de la Madre! 🌷 Que la vida te devuelva con amor todo lo que me has dado. Te amo profundamente. ❤️
+  </div>
+</div>
+
+<style>
+  .floating-container {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    margin-left: 10px;
+    cursor: pointer;
+    z-index: 999;
+  }
+
+  .icon {
+    font-size: 28px;
+    display: inline-block;
+    transition: transform 0.5s ease;
+    user-select: none;
+  }
+
+  .icon.opening {
+    animation: openGift 0.6s forwards;
+  }
+
+  @keyframes openGift {
+    0% {
+      transform: rotate(0deg) scale(1);
+    }
+    50% {
+      transform: rotate(-15deg) scale(1.2);
+    }
+    100% {
+      transform: rotate(0deg) scale(1);
+    }
+  }
+
+  /* Tooltip estilo hacia la derecha */
+  .tooltip {
+    visibility: hidden;
+    max-width: 320px;
+    width: 280px;
+    background-color: #fff8f0;
+    color: #5a2a00;
+    text-align: left;
+    border-radius: 1px 50px 50px 50px;
+    padding: 16px 20px;
+    position: absolute;
+    left: 110%; /* justo a la derecha del icono */
+    top: 50%;
+    transform: translateY(-50%) translateX(10px);
+    box-shadow: 0 10px 22px rgb(22 43 248 / 75%);
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    font-family: 'Georgia', serif;
+    font-size: 9px;
+    line-height: 1.6;
+    pointer-events: none;
+    z-index: 1000;
+  }
+
+  .tooltip::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -9px;
+    border-width: 9px;
+    border-style: solid;
+    border-color: transparent #fff8f0 transparent transparent;
+  }
+
+  .tooltip.show {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(-2%) translateX(0);
+    pointer-events: auto;
+  }
+
+  /* Responsividad */
+  @media (max-width: 480px) {
+    .tooltip {
+      position: fixed;
+      left: 50% !important;
+      top: auto !important;
+      bottom: 20px;
+      transform: translateX(-50%) translateY(0) !important;
+      width: 90vw;
+      max-width: none;
+      border-radius: 12px;
+      padding: 14px 18px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    }
+
+    .tooltip::after {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  const icon = document.getElementById("showTooltip");
+  const tooltip = document.getElementById("tooltipMessage");
+
+  icon.addEventListener("click", () => {
+    icon.classList.add("opening");
+    setTimeout(() => {
+      tooltip.classList.toggle("show");
+      icon.classList.remove("opening");
+    }, 600);
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!icon.contains(e.target) && !tooltip.contains(e.target)) {
+      tooltip.classList.remove("show");
+    }
+  });
+
+  icon.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      icon.click();
+    }
+  });
+</script>
+
+        </div>
+      </div>
+    </div>
+
+    <button class="share-btn" id="share-btn">Compartir</button>
+    <button class="share-btn">Ir</button>
+    <div class="name-form" id="name-form">
+      <div class="form-container">
+  <h2>Ingresa el nombre de la Reyna</h2>
+
+  <input
+    type="text"
+    id="name-input"
+    placeholder="Ej: Mi querida mamá"
+    required
+  />
+
+  <div class="gender-options">
+    <!-- <p>Que eres:</p> -->
+
+    <label class="gender-option">
+      <input type="radio" name="child-type" value="Hijo" checked />
+      Hijo
+    </label>
+
+    <label class="gender-option">
+      <input type="radio" name="child-type" value="Hija" />
+      Hija
+    </label>
+
+    <!-- Opciones adicionales ocultas inicialmente -->
+    <div id="more-options" style="display: none;">
+      <label class="gender-option">
+        <input type="radio" name="child-type" value="Sobrina" />
+        Sobrina
+      </label>
+      <label class="gender-option">
+        <input type="radio" name="child-type" value="Sobrino" />
+        Sobrino
+      </label>
+      <label class="gender-option">
+        <input type="radio" name="child-type" value="Yerna" />
+        Yerna
+      </label>
+      <label class="gender-option">
+        <input type="radio" name="child-type" value="Yerno" />
+        Yerno
+      </label>
+    </div>
+
+    <!-- Botón de ícono sin diseño, solo funcional -->
+    <button
+      id="toggle-btn"
+      type="button"
+      title="Mostrar más opciones"
+      style="all: unset; cursor: pointer; margin-left: 5px;"
+    >
+      ▼
+    </button>
+  </div>
+
+  <button id="submit-btn">Generar</button>
+</div>
+
+<script>
+  const toggleBtn = document.getElementById("toggle-btn");
+  const moreOptions = document.getElementById("more-options");
+
+  toggleBtn.addEventListener("click", () => {
+    const isVisible = moreOptions.style.display === "block";
+    moreOptions.style.display = isVisible ? "none" : "block";
+    toggleBtn.textContent = isVisible ? "▼" : "▲";
+    toggleBtn.title = isVisible ? "Mostrar más opciones" : "Ocultar opciones";
+  });
+</script>
+
+      </div>
+    </div>
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4704501585981299"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      // Desactivar clic derecho
+      document.addEventListener("contextmenu", function (e) {
+        e.preventDefault();
+      });
+
+      // Desactivar combinaciones de teclas para inspeccionar
+      document.addEventListener("keydown", function (e) {
+        if (
+          e.key === "F12" ||
+          (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "i") ||
+          (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "j") ||
+          (e.ctrlKey && e.key.toLowerCase() === "u") ||
+          (e.ctrlKey && e.key.toLowerCase() === "s")
+        ) {
+          e.preventDefault();
+        }
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const nameForm = document.getElementById("name-form");
+        const nameInput = document.getElementById("name-input");
+        const submitBtn = document.getElementById("submit-btn");
+        const momNameElement = document.getElementById("mom-name");
+        const letterMomNameElement = document.getElementById("letter-mom-name");
+        const childTypeElement = document.getElementById("child-type");
+        const shareBtn = document.getElementById("share-btn");
+        const envelope = document.getElementById("envelope");
+        const childTypeRadios = document.querySelectorAll(
+          'input[name="child-type"]'
+        );
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const nameParam = urlParams.get("nombre");
+        const typeParam = urlParams.get("tipo");
+
+        if (nameParam && typeParam) {
+          updateNames(nameParam, typeParam);
+          nameForm.style.display = "none";
+          shareBtn.style.display = "block";
+          document.querySelector(`input[value="${typeParam}"]`).checked = true;
+        } else {
+          nameForm.style.display = "flex";
+          envelope.style.display = "none";
+        }
+
+        submitBtn.addEventListener("click", function () {
+          const name = nameInput.value.trim();
+          const childType = document.querySelector(
+            'input[name="child-type"]:checked'
+          ).value;
+
+          if (name) {
+            updateNames(name, childType);
+            nameForm.style.display = "none";
+            envelope.style.display = "block";
+            shareBtn.style.display = "block";
+
+            const newUrl = `${
+              window.location.pathname
+            }?nombre=${encodeURIComponent(name)}&tipo=${childType}`;
+            window.history.pushState({}, "", newUrl);
+          }
+        });
+
+        shareBtn.addEventListener("click", function () {
+          const currentUrl = window.location.href;
+
+          if (navigator.share) {
+            navigator
+              .share({
+                title: "Una carta especial para mamá",
+                text: "Mira esta linda carta que hice para mi Ti mi Reyna ❤️",
+                url: currentUrl,
+              })
+              .catch(() => copyToClipboard(currentUrl));
+          } else {
+            copyToClipboard(currentUrl);
+          }
+        });
+
+        function updateNames(name, type) {
+          momNameElement.textContent = name;
+          letterMomNameElement.textContent = name;
+          childTypeElement.textContent = `Tu ${type}`;
+        }
+
+        function copyToClipboard(text) {
+          const textarea = document.createElement("textarea");
+          textarea.value = text;
+          document.body.appendChild(textarea);
+          textarea.select();
+          document.execCommand("copy");
+          document.body.removeChild(textarea);
+          alert("¡Enlace copiado! Compártelo con amor ❤️");
+        }
+      });
+    </script>
+  </body>
+</html>
